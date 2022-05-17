@@ -26,8 +26,9 @@ body {
 	font-size: 40px !important;
 }
 
-.view .material-icons:hover {
+.material-icons:hover {
 	color:black;
+	cursor:pointer;
 }
 
 .table-title {        
@@ -148,6 +149,7 @@ table.table .avatar {
 	padding: 10px 10px 5px 10px;
 	justify-content: space-between;
 }
+
 
 .movie-details {
 	width:80%;

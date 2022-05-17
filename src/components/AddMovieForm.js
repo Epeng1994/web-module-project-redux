@@ -73,7 +73,7 @@ const AddMovieForm = (props) => {
 
 const mapStateToProps = state =>{
     return({
-        idLength: (state.movies.length)
+        idLength: (state.movieReducer.movies.length)
     })
 }
 

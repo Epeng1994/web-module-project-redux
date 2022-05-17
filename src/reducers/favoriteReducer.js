@@ -8,9 +8,12 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case ADD_FAVORITE:
-            return{...state, 
-                favoriteMovies: state.favoriteMovies.concat(action.payload)
+            if(state.favoriteMovies.includes(action.payload)){
+                alert('You already like this')
             }
+            else{return{...state, 
+                favoriteMovies: state.favoriteMovies.concat(action.payload)
+            }}
         case TOGGLE_FAVORITES:
             return{...state,
                 displayFavorites: !state.displayFavorites

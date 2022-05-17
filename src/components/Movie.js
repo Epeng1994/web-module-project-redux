@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {deleteMovie} from '../actions/movieActions';
 import reducer from '../reducers/movieReducer'
-import {addFavorite} from '../actions/favoritesActions'
+import {addFavorite, removeFavorite} from '../actions/favoritesActions'
 
 const Movie = (props) => {
     const { id } = useParams();
@@ -42,7 +42,11 @@ const Movie = (props) => {
                         
                         <section>
                             <span className="m-2 btn btn-dark" onClick = {()=>{props.addFavorite(movie);push('/movies')}}>Favorite</span>
-                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete" onClick = {()=>{props.deleteMovie(movie.id);push('/movies')}}/></span>
+                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete" onClick = {()=>{
+                                props.deleteMovie(movie.id);
+                                push('/movies')
+                                props.removeFavorite(movie.id)
+                                }}/></span>
                         </section>
                     </div>
                 </div>
@@ -59,4 +63,4 @@ const mapStateToProps = state =>{
     })
 }
 
-export default connect(mapStateToProps, {deleteMovie, addFavorite})(Movie);
+export default connect(mapStateToProps, {deleteMovie, addFavorite, removeFavorite})(Movie);

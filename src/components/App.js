@@ -13,13 +13,14 @@ import FavoriteMovieList from './FavoriteMovieList';
 
 
 
+
 const App = props => {
   const displayFavorites = props.displayFavorites
 
   return (
     <div>
       <nav className="navbar navbar-dark bg-dark">
-        <span className="navbar-brand" >Redux Module Project</span>
+        <span className="navbar-brand" >Movie Tracker</span>
       </nav>
 
       <div className="container">
